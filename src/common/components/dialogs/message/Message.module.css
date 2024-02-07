@@ -1,0 +1,101 @@
+.message {
+
+
+    width: 575px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+
+}
+
+.imageAndText {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    flex-direction: row-reverse;
+
+}
+
+
+.imageAndText img {
+    width: 48px;
+    height: 48px;
+    align-self: flex-end;
+    margin-left: 14px;
+
+}
+
+.text {
+    box-shadow: 0px 5px 20px rgba(29, 33, 38, 0.03);
+    position: relative;
+    border-radius: 10px;
+    background-color: #06C;
+    padding: 10px 20px;
+    margin-left: 27px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-wrap: break-word;
+
+
+}
+
+.text:after {
+    content: "";
+    left: 410px;
+    position: absolute;
+    bottom: -20px; /* Положение треугольника */
+    border: 20px solid transparent; /* Прозрачные границы */
+    border-top: 20px solid #06C; /* Добавляем треугольник */
+    transform: rotate(180deg);
+    bottom: 0;
+}
+
+
+.name {
+    margin-bottom: 4px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.messageText {
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+
+}
+
+.time {
+    margin-right: 10px;
+    color: #000;
+    align-self: end;
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 5px;
+}
