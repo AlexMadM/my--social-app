@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import CardActions from "@mui/material/CardActions";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Button from "@mui/material/Button";
-import { selectFriends } from "../../../app/selectors";
+import { filterFriends, selectFriends } from "../../../app/selectors";
 import friends from "./Friends";
 import { createSelector } from "@reduxjs/toolkit";
 import { useAppDispatch } from "../../../app/store";
@@ -22,11 +22,8 @@ type props ={
 
 const Friends = ({search}:props) => {
   const dispatch = useAppDispatch()
-  const filterFriends=createSelector([selectFriends],(friends)=>{
-    return  friends.filter((f)=>f.name.includes(search));
 
-  })
-  const friends = useSelector(filterFriends)
+  const friends = useSelector(filterFriends(search))
 const [currentPage,setCurrentPage]=useState<number>(1)
   const [pageSize,setPageSize]=useState<number>(4)
 
