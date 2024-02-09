@@ -25,8 +25,8 @@ const Feed = () => {
         </Stack>
       ) : (
         <>
-          {friends.map(el=>{
-            return   <Post key={el.id} name={el.name} />
+          {friends?.map((el,i)=>{
+            return   <Post key={i} name={el.name} />
           })}
 
         </>

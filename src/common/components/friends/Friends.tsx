@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Avatar, Box, IconButton, Pagination, PaginationItem, Stack } from "@mui/material";
 import { useSelector } from "react-redux";
-
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
@@ -9,11 +8,9 @@ import CardActions from "@mui/material/CardActions";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import Button from "@mui/material/Button";
 import { filterFriends, selectFriends } from "../../../app/selectors";
-import friends from "./Friends";
-import { createSelector } from "@reduxjs/toolkit";
 import { useAppDispatch } from "../../../app/store";
 import { getUser } from "../../../app/slice_users";
-import { NavLink } from "react-router-dom";
+
 
 type props ={
   search:string
@@ -38,7 +35,7 @@ const [currentPage,setCurrentPage]=useState<number>(1)
       {friends.map((el, index) => {
         return (
 
-          <Card sx={{margin:'20px', maxWidth: 500 }}>
+          <Card key={index} sx={{margin:'20px', maxWidth: 500 }}>
             <CardContent>
               <Avatar
                 alt="Remy Sharp"
@@ -68,6 +65,7 @@ const [currentPage,setCurrentPage]=useState<number>(1)
     onChange={(_, num) => setCurrentPage(num)}
     showFirstButton
     showLastButton
+
     sx={{ marginY: 3, marginX: "auto" }}
 
   />

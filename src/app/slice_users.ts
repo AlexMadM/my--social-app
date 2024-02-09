@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { GetUsersResponse, usersAPI, UserType } from './api'
+import {  usersAPI, UserType } from './api'
 import { createAppAsyncThunk } from './thunk'
 
 
@@ -36,9 +36,6 @@ export const getUser=createAppAsyncThunk<{items:UserType[] },any>('user/getUser'
     const res = await usersAPI.getUsers(arg.currentPage,arg.pageSize)
 
 return res.data
-
-
-
   }catch (e){
    return  rejectWithValue(null)
   }

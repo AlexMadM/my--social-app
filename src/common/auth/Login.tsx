@@ -2,7 +2,17 @@ import React from "react";
 import { useFormik } from "formik";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { Button, Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel, Grid, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormGroup,
+  FormLabel,
+  Grid,
+  TextField
+} from "@mui/material";
 
 import { selectIsLoggedIn } from "./auth.selectors";
 import { authThunks } from "./auth.reducer";
@@ -37,12 +47,12 @@ export const Login = () => {
   });
 
   if (isLoggedIn) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/news"} />;
   }
 
   return (
-    <Grid container justifyContent="center">
-      <Grid item xs={4}>
+
+      <Box  sx={{  display:"flex",justifyContent:"center",height: "100vh" }} flex={4} p={{ xs: 0, md: 2 }}>
         <form onSubmit={formik.handleSubmit}>
           <FormControl>
             <FormLabel>
@@ -71,7 +81,7 @@ export const Login = () => {
             </FormGroup>
           </FormControl>
         </form>
-      </Grid>
-    </Grid>
+      </Box>
+
   );
 };

@@ -38,12 +38,12 @@ const Sidebar = ({ mode, setMode,onClick }: Props) => {
             </ListItemButton></NavLink>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
+         <NavLink to='/news'>   <ListItemButton component="a" href="#simple-list">
               <ListItemIcon>
                 <Storefront />
               </ListItemIcon>
-              <ListItemText primary="Marketplace" />
-            </ListItemButton>
+              <ListItemText primary="News" />
+            </ListItemButton></NavLink>
           </ListItem>
           <ListItem disablePadding>
             <NavLink onClick={onClick} to="/friends">  <ListItemButton component="a" href="#simple-list">
