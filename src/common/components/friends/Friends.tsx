@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, Box, IconButton, Pagination, PaginationItem, Stack } from "@mui/material";
+import { Avatar, Box, CircularProgress, IconButton, Pagination, PaginationItem, Stack } from "@mui/material";
 import { useSelector } from "react-redux";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -10,6 +10,7 @@ import Button from "@mui/material/Button";
 import { filterFriends, selectFriends } from "../../../app/selectors";
 import { useAppDispatch } from "../../../app/store";
 import { getUser } from "../../../app/slice_users";
+import { Login } from "../../auth/Login";
 
 
 type props ={
@@ -28,6 +29,13 @@ const [currentPage,setCurrentPage]=useState<number>(1)
     dispatch(getUser({ currentPage, pageSize }))
   }, [currentPage,pageSize]);
 
+  if (friends.length<0) {
+    return (
+      <div style={{ position: "fixed", top: "30%", textAlign: "center", width: "100%" }}>
+        <CircularProgress />
+      </div>
+    );
+  }
 
 
   return (

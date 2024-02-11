@@ -23,14 +23,14 @@ import { me } from "../common/auth/auth.reducer";
 export const App = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
-dispatch(me())
+dispatch(me()); dispatch(getUser({ currentPage, pageSize }))
+
   }, []);
 
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const pageSize = 4;
   const currentPage = 1;
   const getUsers = () => {
-
     dispatch(getUser({ currentPage, pageSize }));
   };
 
@@ -45,13 +45,14 @@ dispatch(me())
 
   const [search, setSearch] = useState<string>("");
 
-  if (!isLoggedIn) {
-    return (
-      <div style={{ position: "fixed", top: "30%", textAlign: "center", width: "100%" }}>
-        <CircularProgress />
-      </div>
-    );
-  }
+  // if (!isLoggedIn) {
+  //   return (
+  //     <div style={{ position: "fixed", top: "30%", textAlign: "center", width: "100%" }}>
+  //       <CircularProgress />
+  //
+  //     </div>
+  //   );
+  // }
 
 
   return (
