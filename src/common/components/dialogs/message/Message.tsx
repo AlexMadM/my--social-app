@@ -1,6 +1,6 @@
 import React from 'react'
 
-import {MessageTextType, MessageType, UserType} from "../Dialog";
+import { MessageType} from "../Dialog";
 
 
 

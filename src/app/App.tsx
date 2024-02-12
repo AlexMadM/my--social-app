@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, CircularProgress, createTheme, PaletteMode, Stack, ThemeProvider } from "@mui/material";
+import { Box, createTheme, PaletteMode, Stack, ThemeProvider } from "@mui/material";
 import Sidebar from "../common/components/sideBar/Sidebar";
 
 import Navbar from "../common/components/navbar/Navbar";
