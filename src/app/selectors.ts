@@ -10,6 +10,6 @@ export const selectFriends = (state: AppRootStateType) => state.usersPage
 // })
 
 export const filterFriends=(search:string)=>createSelector([selectFriends],(friends)=>{
-  return  friends.filter((f)=>f.name.includes(search));
+  return  friends.filter((f)=>f.name.includes(search.toLowerCase()));
 
 })
